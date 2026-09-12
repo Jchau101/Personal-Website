@@ -18,7 +18,6 @@
   --t-hero: 60px;
   --t-h2: 28px;
   --t-h3: 21px;
-  --t-lead: 22px;
   --t-body: 19px;
   --t-small: 15px;
   --t-micro: 13px;
@@ -93,8 +92,8 @@ a { color: var(--accent); }
 
 .lead {
   font-family: var(--serif);
-  font-size: var(--t-lead);
-  line-height: 1.55;
+  font-size: var(--t-body);
+  line-height: 1.65;
 }
 
 .micro {
@@ -566,8 +565,8 @@ input[type="range"]::-moz-range-thumb {
 
 .footer-email {
   font-family: var(--serif);
-  font-size: var(--t-lead);
-  line-height: 1.55;
+  font-size: var(--t-body);
+  line-height: 1.65;
   margin-top: var(--s4);
 }
 .footer-email a {
@@ -606,6 +605,38 @@ input[type="range"]::-moz-range-thumb {
 .measure p a:hover { text-decoration-thickness: 2px; }
 
 .colophon { margin-top: var(--s7); font-family: var(--sans); font-size: var(--t-micro); font-weight: 500; letter-spacing: 0.01em; color: var(--ink-muted); }
+
+/* ------------------------------------------------------------
+   Type consistency: one line-height per size, applied last so it
+   wins over the component rules above.
+   ------------------------------------------------------------ */
+.nav-links a,
+.nav-email,
+.btn,
+.toggle button,
+.colophon,
+.out-rows dt,
+.field-head label,
+.field-label,
+.footer-links li,
+.footer-plain,
+.skip,
+.micro,
+.rail-meta { line-height: 1.45; }
+
+.nav-name,
+.out-rows dd,
+.field-head output,
+.caption,
+.basis,
+.outcome,
+.out-note { line-height: 1.55; }
+
+.lead,
+.footer-note,
+.measure p,
+.rail-body p:not(.outcome),
+.model-intro p { line-height: 1.65; }
 
 /* ============================================================
    10. MEDIA QUERIES
@@ -647,7 +678,6 @@ input[type="range"]::-moz-range-thumb {
     --t-hero: 36px;
     --t-h2: 24px;
     --t-h3: 19px;
-    --t-lead: 19px;
     --t-body: 17px;
     --t-figure: 30px;
   }
@@ -657,7 +687,6 @@ input[type="range"]::-moz-range-thumb {
 
   .nav-links { display: none; }
   .nav-email { display: block; }
-  .nav-name { font-size: var(--t-micro); }
 
   .model { padding: var(--s5); }
   .shot img, .shot--portrait img, .shot--wide img { width: 100%; }
