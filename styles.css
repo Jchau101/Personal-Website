@@ -347,26 +347,17 @@ body.is-ready .hero-portrait { transition-delay: 240ms; }
   object-fit: cover;
 }
 
-.shot.is-pending {
-  position: relative;
-}
-.shot.is-pending img { border: 1px solid var(--rule); }
-.shot.is-pending::after {
-  content: "Photo pending";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: var(--t-micro);
-  letter-spacing: 0.01em;
-  color: var(--ink-muted);
-}
 
 /* 08 resume gap */
 #resume-gap h2 { margin-bottom: var(--s5); }
 #resume-gap .shot { margin-block: var(--s6); }
+.shot--pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s4);
+}
+.shot--pair figcaption { grid-column: 1 / -1; }
+
 .shot figcaption {
   font-family: var(--sans);
   font-size: var(--t-micro);
@@ -699,7 +690,7 @@ input[type="range"]::-moz-range-thumb {
   .nav-email { display: block; }
 
   .model { padding: var(--s5); }
-  .shot.is-pending { width: 100%; }
+  .shot--pair { grid-template-columns: 1fr; }
 }
 
 /* ============================================================

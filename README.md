@@ -45,30 +45,18 @@ grep -n "VERIFY" index.html
    internal MHBC funding notes. If you want it public, publish a copy with the
    open-items and funding-position tabs removed.
 
-## Replacing the placeholder photos
+## Photos
 
-`badminton.png`, `symphony.png`, `knicks.png`, and `dad.png` are solid fills at
-the right dimensions, so the layout and CLS are already correct. Each one is
-wrapped in a figure carrying `is-pending`, which is what draws the "Photo
-pending" label.
+All seven are real and in place. Three sources carried EXIF orientation 6
+(raw pixels landscape, displayed portrait); those were physically rotated and
+the orientation tag reset to 1, so they crop and render the same everywhere.
 
-For each photo:
+Every photo is cropped to 3:2 and exported at exactly 2x its rendered size:
+full-column photos at 1280x854, paired photos at 640x427.
 
-1. Drop the real file into `assets/` at the same name and roughly the same
-   pixel dimensions (badminton 1080x720, symphony 680x1020, knicks 1000x666,
-   dad 1000x666).
-2. If the dimensions differ, update that image's `width` and `height`
-   attributes in `index.html` to the real intrinsic size.
-3. Remove `is-pending` from the wrapping `<figure>`.
-
-Crop guidance from the PRD: badminton 3:2 keeping the full lunge, symphony 2:3
-portrait keeping the stage lighting, knicks 3:2, dad cropped to 3:2 around the
-two of you.
-
-Two open questions on the photos that only you can answer: whether everyone in
-the Knicks group shot is fine being on a public page, and whether the Barstool
-office photo belongs anywhere (if it was an MHBC trek, it could sit in the MHBC
-work entry).
+Open item: the Barstool Sports and NFL photos are captioned by what is visible,
+not by the occasion, because that was never confirmed. See the [VERIFY] comment
+above that figure in index.html.
 
 ## The budget model
 
