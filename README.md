@@ -91,6 +91,15 @@ If you change a constant, that table is how you find out what you broke.
 The Q70 toggle moves the total by $396, not $360: the $360 of ground transport
 saved also takes $36 off the 10% contingency.
 
+## Copy
+
+The page was rewritten out of the PRD's memo voice in September 2026. The
+original hero ("I would rather rebuild a number than accept one") read as a
+positioning statement rather than a person, so the site now opens with a plain
+introduction, and the resume-speak in the work entries was pulled down into
+ordinary sentences. Every number and name from the fact base survived the
+rewrite; only the register changed.
+
 ## Two deviations from the PRD
 
 1. **No WebP.** PRD 9 asks for WebP with a JPEG fallback via `<picture>`. This

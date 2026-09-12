@@ -212,7 +212,7 @@
       setPosition(r.novPosition);
 
       elNote.textContent = r.novPosition < 0
-        ? "Short before the trek. The year is funded; the timing is not."
+        ? "Short before the trip. The year is funded; the timing is not."
         : "Covered. The December receipt lands before we travel.";
 
       elTotal.textContent = money(r.total);

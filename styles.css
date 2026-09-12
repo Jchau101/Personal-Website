@@ -302,9 +302,10 @@ body.is-ready .reveal {
   transform: none;
   transition: opacity 420ms var(--ease), transform 420ms var(--ease);
 }
-body.is-ready .hero-lead { transition-delay: 60ms; }
-body.is-ready .hero-meta { transition-delay: 120ms; }
-body.is-ready .hero-portrait { transition-delay: 180ms; }
+body.is-ready .hero-lead:nth-of-type(1) { transition-delay: 60ms; }
+body.is-ready .hero-lead:nth-of-type(2) { transition-delay: 120ms; }
+body.is-ready .hero-meta { transition-delay: 180ms; }
+body.is-ready .hero-portrait { transition-delay: 240ms; }
 
 /* ============================================================
    7. SECTIONS 02 TO 09
@@ -593,6 +594,7 @@ input[type="range"]::-moz-range-thumb {
   letter-spacing: 0.01em;
   color: var(--ink-muted);
 }
+.footer-plain { color: var(--ink); }
 .footer-links a {
   color: var(--accent);
   text-decoration: underline;
