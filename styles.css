@@ -29,6 +29,7 @@
   --pad: 32px;
   --sec-pad: 128px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --col: 640px;   /* shared measure: prose and photos */
 }
 
 /* ============================================================
@@ -88,7 +89,7 @@ a { color: var(--accent); }
 
 .measure p,
 .rail-body p,
-.model-intro p { max-width: 64ch; }
+.model-intro p { max-width: var(--col); }
 
 .lead {
   font-family: var(--serif);
@@ -182,7 +183,7 @@ a { color: var(--accent); }
   padding-top: 6px;
 }
 
-.rail-body p { max-width: 60ch; }
+.rail-body p { max-width: var(--col); }
 
 .outcome {
   margin-top: var(--s3);
@@ -272,7 +273,7 @@ a { color: var(--accent); }
 
 .hero-lead {
   color: var(--ink-muted);
-  max-width: 54ch;
+  max-width: var(--col);
   margin-top: var(--s5);
 }
 
@@ -339,14 +340,15 @@ body.is-ready .hero-portrait { transition-delay: 240ms; }
 .off h2 { margin-bottom: var(--s7); }
 .off .rail + .rail { margin-top: var(--s7); }
 
-.shot { margin-block: var(--s5); }
-.shot img { width: 540px; }
-.shot--portrait img { width: 340px; }
-.shot--wide img { width: 500px; }
+.shot { margin-block: var(--s6); max-width: var(--col); }
+.shot img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
 
 .shot.is-pending {
   position: relative;
-  width: fit-content;
 }
 .shot.is-pending img { border: 1px solid var(--rule); }
 .shot.is-pending::after {
@@ -365,12 +367,20 @@ body.is-ready .hero-portrait { transition-delay: 240ms; }
 /* 08 resume gap */
 #resume-gap h2 { margin-bottom: var(--s5); }
 #resume-gap .shot { margin-block: var(--s6); }
+.shot figcaption {
+  font-family: var(--sans);
+  font-size: var(--t-micro);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--ink-muted);
+  margin-top: var(--s3);
+}
 
 /* ============================================================
    8. MODEL MODULE
    ============================================================ */
 .model-sec h2 { margin-bottom: var(--s5); }
-.model-intro p { max-width: 62ch; }
+.model-intro p { max-width: var(--col); }
 .model-sec .model-intro { margin-bottom: var(--s7); }
 
 .model {
@@ -501,7 +511,7 @@ body.is-ready .hero-portrait { transition-delay: 240ms; }
 
 #reset { margin-top: var(--s5); }
 
-.model-sec .caption { margin-top: 20px; max-width: 64ch; }
+.model-sec .caption { margin-top: 20px; max-width: var(--col); }
 
 /* sliders */
 input[type="range"] {
@@ -561,7 +571,7 @@ input[type="range"]::-moz-range-thumb {
   align-items: start;
 }
 
-.footer-note { max-width: 48ch; margin-top: var(--s3); }
+.footer-note { max-width: var(--col); margin-top: var(--s3); }
 
 .footer-email {
   font-family: var(--serif);
@@ -689,7 +699,6 @@ input[type="range"]::-moz-range-thumb {
   .nav-email { display: block; }
 
   .model { padding: var(--s5); }
-  .shot img, .shot--portrait img, .shot--wide img { width: 100%; }
   .shot.is-pending { width: 100%; }
 }
 
