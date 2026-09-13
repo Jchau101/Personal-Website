@@ -30,6 +30,7 @@
   --sec-pad: 128px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --col: 640px;   /* shared measure: prose and photos */
+  --shot-h: 560px; /* tallest a single photo may render */
 }
 
 /* ============================================================
@@ -341,22 +342,35 @@ body.is-ready .hero-portrait { transition-delay: 240ms; }
 .off .rail + .rail { margin-top: var(--s7); }
 
 .shot { margin-block: var(--s6); max-width: var(--col); }
+/* Photos keep the orientation they were shot in. A single photo is capped by
+   the column width and by --shot-h, so tall frames stay a sensible height. */
 .shot img {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: var(--shot-h);
 }
 
 
 /* 08 resume gap */
 #resume-gap h2 { margin-bottom: var(--s5); }
 #resume-gap .shot { margin-block: var(--s6); }
+/* Two photos to a row: flex-grow is set to each image's aspect ratio, so the
+   pair renders at one shared height and the row fills the column exactly,
+   whatever mix of horizontal and vertical it contains. */
 .shot--pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: var(--s4);
 }
-.shot--pair figcaption { grid-column: 1 / -1; }
+.shot--pair img {
+  flex: var(--ar) 1 0;
+  min-width: 0;
+  width: 100%;
+  max-height: none;
+}
+.shot--pair figcaption { flex: 0 0 100%; margin-top: 0; }
 
 .shot figcaption {
   font-family: var(--sans);
@@ -690,7 +704,8 @@ input[type="range"]::-moz-range-thumb {
   .nav-email { display: block; }
 
   .model { padding: var(--s5); }
-  .shot--pair { grid-template-columns: 1fr; }
+  .shot--pair { flex-direction: column; }
+  .shot--pair img { flex: none; width: 100%; }
 }
 
 /* ============================================================

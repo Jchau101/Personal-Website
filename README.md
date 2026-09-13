@@ -51,8 +51,14 @@ All seven are real and in place. Three sources carried EXIF orientation 6
 (raw pixels landscape, displayed portrait); those were physically rotated and
 the orientation tag reset to 1, so they crop and render the same everywhere.
 
-Every photo is cropped to 3:2 and exported at exactly 2x its rendered size:
-full-column photos at 1280x854, paired photos at 640x427.
+Photos keep the orientation they were shot in. Nothing is cropped to a common
+aspect ratio; horizontal stays horizontal and vertical stays vertical.
+
+Alignment is held two ways. A single photo is capped by the column width and by
+--shot-h (560px), so a tall frame cannot run away down the page. A pair of
+photos is laid out with flex-grow set to each image's aspect ratio, which gives
+the row one shared height and makes it fill the column exactly regardless of
+what mix of orientations it holds.
 
 Open item: the Barstool Sports and NFL photos are captioned by what is visible,
 not by the occasion, because that was never confirmed. See the [VERIFY] comment
