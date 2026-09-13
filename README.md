@@ -41,7 +41,7 @@ grep -n "VERIFY" index.html
    "Finance Accelerator". Getting either wrong is the one unforced error here.
 3. **The four photos** in `assets/` are flat placeholders, because the real
    files were not on this machine. See below.
-4. **The workbook** is deliberately not linked. It carries firm addresses and
+3. **The workbook** is deliberately not linked. It carries firm addresses and
    internal MHBC funding notes. If you want it public, publish a copy with the
    open-items and funding-position tabs removed.
 
