@@ -27,7 +27,7 @@
   --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
 
   --pad: 32px;
-  --sec-pad: 128px;
+  --sec-pad: 64px;   /* doubles to 128px between adjacent sections */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --col: 640px;   /* shared measure: prose and photos */
   --shot-h: 560px; /* tallest a single photo may render */
@@ -274,7 +274,7 @@ a { color: var(--accent); }
 /* ============================================================
    6. SECTION 01 HERO
    ============================================================ */
-.hero { padding-top: 112px; padding-bottom: var(--s10); }
+.hero { padding-top: var(--s8); padding-bottom: 80px; }
 
 .hero-grid {
   display: grid;
@@ -362,7 +362,7 @@ body.is-ready .hero-portrait { transition-delay: 240ms; }
 /* 05 learning */
 .learning {
   background: var(--paper-deep);
-  padding-block: var(--s9);
+  padding-block: var(--sec-pad);
 }
 .learning h2 { margin-bottom: var(--s5); }
 .learning .model-intro { margin-bottom: var(--s7); }
@@ -697,7 +697,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width: 900px) {
-  :root { --pad: 24px; --sec-pad: 96px; --t-hero: 48px; }
+  :root { --pad: 24px; --sec-pad: 52px; --t-hero: 48px; }
 
   .hero-grid { grid-template-columns: 1fr; row-gap: var(--s7); }
   .hero-portrait img { width: 240px; }
@@ -723,7 +723,7 @@ input[type="range"]::-moz-range-thumb {
 @media (max-width: 640px) {
   :root {
     --pad: 20px;
-    --sec-pad: 72px;
+    --sec-pad: 40px;
     --t-hero: 36px;
     --t-h2: 24px;
     --t-h3: 19px;
@@ -732,7 +732,7 @@ input[type="range"]::-moz-range-thumb {
   }
   body { line-height: 1.6; }
   h1 { line-height: 1.08; }
-  .hero { padding-top: var(--s8); }
+  .hero { padding-top: var(--s7); }
 
   .nav-links { display: none; }
   .nav-email { display: block; }
