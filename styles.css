@@ -31,6 +31,7 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --col: 640px;   /* shared measure: prose and photos */
   --shot-h: 560px; /* tallest a single photo may render */
+  --t-hero-sm: 44px;
 }
 
 /* ============================================================
@@ -63,9 +64,19 @@ h1 {
   font-family: var(--sans);
   font-weight: 600;
   font-size: var(--t-hero);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
   max-width: 15ch;
+}
+
+main h2::before,
+#contact h3::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  margin-bottom: var(--s5);
 }
 
 h2 {
@@ -278,7 +289,30 @@ a { color: var(--accent); }
   margin-top: var(--s5);
 }
 
-.hero-meta { margin-top: var(--s6); }
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s4) var(--s6);
+  margin-top: var(--s6);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--rule);
+  max-width: var(--col);
+}
+.facts dt {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: var(--t-micro);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--ink-muted);
+  margin-bottom: 2px;
+}
+.facts dd {
+  font-family: var(--sans);
+  font-size: var(--t-small);
+  line-height: 1.55;
+  color: var(--ink);
+}
 
 .hero-portrait img { width: 300px; }
 
@@ -305,7 +339,7 @@ body.is-ready .reveal {
 }
 body.is-ready .hero-lead:nth-of-type(1) { transition-delay: 60ms; }
 body.is-ready .hero-lead:nth-of-type(2) { transition-delay: 120ms; }
-body.is-ready .hero-meta { transition-delay: 180ms; }
+body.is-ready .facts { transition-delay: 180ms; }
 body.is-ready .hero-portrait { transition-delay: 240ms; }
 
 /* ============================================================
@@ -704,6 +738,7 @@ input[type="range"]::-moz-range-thumb {
   .nav-email { display: block; }
 
   .model { padding: var(--s5); }
+  .facts { grid-template-columns: 1fr; gap: var(--s4); }
   .shot--pair { flex-direction: column; }
   .shot--pair img { flex: none; width: 100%; }
 }
