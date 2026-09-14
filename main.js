@@ -50,7 +50,7 @@
   var STAT_FEE = 3.50;        // per room-night
   var FLYER_RT = 27.00;       // Michigan Flyer round trip, advance online
   var SUBWAY_FARE = 3.00;     // MTA base, effective 4 Jan 2026
-  var SUBWAY_RIDES = 6;       // 4 routed, 2 allowance
+  var SUBWAY_RIDES = 6;       // routed against confirmed visits, plus allowance
   var SHUTTLE_FARE = 18.00;   // Uber Shuttle per seat per leg
   var Q70_FARE = 3.00;        // Q70 is free, subway connection only
   var INFLOWS_PRE_DEC = 5000; // Jul 1000 + Aug 1000 + Sep 1500 + Oct 1500
