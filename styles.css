@@ -654,7 +654,6 @@ input[type="range"]::-moz-range-thumb {
 .footer-email a:hover,
 .measure p a:hover { text-decoration-thickness: 2px; }
 
-.colophon { margin-top: var(--s7); font-family: var(--sans); font-size: var(--t-micro); font-weight: 500; letter-spacing: 0.01em; color: var(--ink-muted); }
 
 /* ------------------------------------------------------------
    Type consistency: one line-height per size, applied last so it
@@ -664,7 +663,6 @@ input[type="range"]::-moz-range-thumb {
 .nav-email,
 .btn,
 .toggle button,
-.colophon,
 .out-rows dt,
 .field-head label,
 .field-label,
